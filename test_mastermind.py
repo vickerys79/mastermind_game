@@ -18,11 +18,11 @@ def test_check_guess_correct(game):
 def test_check_guess_wrong(game):
     game.secret_code = ["R", "G", "B", "Y"]
     feedback = game.check_guess("OOPY")
-    assert feedback == ["W", "W", " ", " "]
+    assert feedback == [" ", " ", " ", "R"]
 
 def test_check_guess_partial(game):
     game.secret_code = ["R", "G", "B", "Y"]
-    feedback = game.check_guess("GROB")
+    feedback = game.check_guess("GRYB")
     assert feedback == ["W", "W", "W", "W"]
 
 def test_is_game_over_correct(game):
