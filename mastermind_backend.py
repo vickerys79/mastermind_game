@@ -7,7 +7,7 @@ class MastermindGame:
     """
 
     def __init__(self):
-        self.secret_code = self.generate_secret_code()
+        self.secret_code = ['R', 'R', 'R', 'R']  # self.generate_secret_code()
         self.attempts = 0
 
     def generate_secret_code(self):
@@ -48,7 +48,9 @@ class MastermindGame:
         Returns:
             bool: True if the player guessed the code, False otherwise.
         """
-        return guess == self.secret_code
+        answer = [letter for letter in guess]
+
+        return answer == self.secret_code
 
     def get_secret_code(self):
         """
